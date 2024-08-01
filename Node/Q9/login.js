@@ -5,8 +5,8 @@ const users = [
     'user3,password3'
 ];
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting the traditional way
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form from submitting the traditional way
 
     // Get user input
     const username = document.getElementById('username').value;
