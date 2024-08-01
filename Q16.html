@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color:purple;
+            background-color: pink;
+            text-shadow:2px 3px 6px black;
+        }
+        button{
+            color:aliceblue;
+            background-color: rgb(71, 12, 127);
+        }
+    </style>
+    <script src="./j_query.js"></script>
+    <script>
+             $(document).ready(function(){
+                var cnt=0;
+                var arr=['www.google.com','www.msn.com','www.amazon.com','in.answers.yahoo.com','en.m.wikipedia.com','codehs.gitbooks.io','www.coderanch.com'];
+                $('#btn1').click(function(){
+                    var website=$('#web').val();
+                    arr.push(website);
+                    $('#res').html(`website added ${website}`)
+                    $('#web').val('');
+                })
+
+                $('#btn2').click(function(){
+                    $('#res').html("")
+                    for(var p of arr){
+                        $('#res').append(p+"<br>")
+
+                    }
+                })
+
+                $('#btn3').click(function(){
+                    $('#res').html("")
+                    for(var p of arr){
+                        if(p.includes("www")){
+                        $('#res').append(p+"<br>")
+                        cnt++;
+                        }
+
+                    }
+                    $('#res').append(`Total websites are : ${cnt}`)
+                })
+
+                
+             })    </script>
+</head>
+<body>
+    <form>
+        <label>Enter website</label><input id="web"/><br><br>
+
+        <button type="button" id="btn1">Add Website Url</button><br><br>
+
+        <button type="button" id="btn2">Display All</button><br><br>
+
+        <button type="button" id="btn3">Display www Website</button><br><br>
+
+        <div id="res"></div>
+    </form>
+</body>
+</html>

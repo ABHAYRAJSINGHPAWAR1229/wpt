@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./j_query.js"></script>
+    <script >
+        $(document).ready(function(){
+           
+            $("#btn").click(function(){
+                var num=$("#num").val();
+                
+                if(num>1000 || num<0){
+                      $("#res").html("Number is out of bound")
+                }
+                else{
+                    var cpy=num;
+                    var sum=0;
+                    while(cpy!==0){
+                        sum+=cpy%10;
+                        cpy=Math.floor(cpy/10);
+                       $("#res").html(`sum is = ${sum}`) 
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <form>
+        <label for="num">Number :</label><input type="number" id="num" placeholder="Enter the number" /><br><br>
+        <button type="button" id="btn">Calculate</button>
+
+     <div style="display: flex;justify-content: center;">  <h3> <div id="res"></div> </h3> </div>
+    </form>
+</body>
+</html>

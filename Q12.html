@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(221, 139, 139);
+            color:brown;
+            text-shadow: 2px 2px 3px Red;
+        }
+        button{
+            background-color: brown;
+            color:aliceblue
+        }
+    </style>
+    <script src="../javascript/j_query.js"></script>
+    <script>
+          $(document).ready(function(){
+            var arr=[]
+            $("#btn1").click(function(){
+                var n=$("#name").val();
+                arr.push(n);
+                $('#res').html(`Employee Added ${n}`);
+
+                $('#name').val("")
+            })
+            $("#btn2").click(function(){
+               datalist(arr);
+            })
+          })
+          function datalist(arr){
+            arr.sort();
+            str=`<ul>`
+            for(var p of arr){
+               str+=`<li>${p}</li>`;
+            }
+                    str+=`</ul>`
+
+                    $('#res').html(str);
+            
+          }
+    </script>
+</head>
+<body>
+    <form>
+        <label>Employee Name</label><input type="text" id="name"/>
+
+        <button type="button" id="btn1">Add employee</button>
+        <button type="button" id="btn2">Display All employee</button>
+        <div id="res"></div>
+    </form>
+</body>
+</html>

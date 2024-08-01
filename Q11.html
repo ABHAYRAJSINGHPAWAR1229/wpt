@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn">Get Week Day</button>
+    <script src="./j_query.js"></script>
+    <script>
+        debugger
+       
+
+        $(document).ready(function(){
+            $("#btn").click(function(){
+            var date=new Date();
+            var day=date.getDay();
+        switch (day) {
+            case 1:
+            $("#res").html('Mon')
+                break;
+            case 2:
+            $("#res").html('Tues')
+                break;
+            case 3:
+            $("#res").html('Wed')
+                break;
+            case 4:
+            $("#res").html('Thur')
+                break;
+            case 5:
+            $("#res").html('Fri')
+                break;
+            case 6:
+            $("#res").html('Sat')
+                break;
+            case 7:
+            $("#res").html('Sun')
+                break;
+           
+
+        
+            default:
+                break;
+        }
+            
+        })
+    })
+    </script>
+    <div id="res"></div>
+</body>
+</html>
+
+71800159753

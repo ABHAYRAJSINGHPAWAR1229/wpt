@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./j_query.js"></script>
+    <script>
+        $(document).ready(function(){
+            var arr=['Abhay','Abhimanyu','JAY','Bhumi','Tanu','Shree']
+            $("#btn").click(function(){
+                
+                var str="";
+                for(var p of arr){
+                    p=p.toUpperCase();
+                    str+=`<li> ${p} </li>`;
+                }
+
+                $("#list").html(str);
+            })
+        
+        
+        })
+    </script>
+</head>
+<body>
+    <h3>Members of my Group are</h3><br><br>
+    <button type="button" id="btn">View members</button>
+  <div style="display: flex;justify-content: center;">  <h1><ol>
+      <h2 id="list"></h2>
+    </ol>
+</h1>
+</div>
+</body>
+</html>

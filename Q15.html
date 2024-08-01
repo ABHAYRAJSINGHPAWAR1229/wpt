@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: darkgreen;
+            background-color:aquamarine;
+            text-shadow: 2px 3px 5px black;
+        }
+        button{
+            color:aliceblue;
+            background-color: rgb(33, 59, 8);
+        }
+    </style>
+    <script src="./j_query.js"></script>
+    <script>
+        var arr=[];
+        var duparr=[];
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                var a=$('#word').val();
+                arr.push(a);
+                $('#word').val('');
+                $('#res').html("Added Employee Name is : " +a)
+                alert(a)
+            })
+
+            $('#btn2').click(function(){
+                display(arr);
+            })
+
+            $('#btn3').click(function(){
+                duparr=arr;
+                duparr=duparr.sort();
+                display(duparr);
+            })
+        })
+        
+         function display(a){
+            
+            var str="<ul>"
+                for(var p of a)
+                  str+=`<li>${p}</li>`
+
+            str+=`</ul>`
+            $('#res').html(" List of Employee <br>"+str);
+         }
+
+    </script>
+</head>
+<body>
+    <form>
+        <label>word</label><input type="text" id="word"/><br><br>
+        <button type="button" id="btn1">Add </button>
+        <button type="button" id="btn2">Display</button>
+        <button type="button" id="btn3">Sorted Name</button>
+        
+        <div id="res"></div>
+
+    </form>
+    
+</body>
+</html>

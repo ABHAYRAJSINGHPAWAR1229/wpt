@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound interest</title>
+    <script src="./j_query.js"></script>
+    <script> 
+      $(document).ready(function(){
+        $('#btn').click(function(){
+            var p=parseFloat($('#prin').val());
+            var r=parseFloat($('#rate').val());
+            var t=parseFloat($('#time').val());
+            var res=(p*(1+0.01*r)**t)-p;
+            var res=res.toFixed(2);
+
+            $('#inte').val(res);
+        })
+      })
+    </script>
+</head>
+<body>
+    <label>Principal : </label><input type="number" id="prin"/><br><br>
+
+    <label>Rate : </label><input type="number" id="rate"/><br><br>\
+
+    <label>Time : </label><input type="number" id="time"/><br><br>
+
+    <button type="button" id="btn">Calculate</button><br><br>
+
+    <label>Compound interest : </label><input type="text" id="inte" disabled/><br><br>
+</body>
+</html>

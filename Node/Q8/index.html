@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Calculator</title>
+    <script>
+        async function calculateCircle() {
+            const radius = document.getElementById('radius').value;
+            
+            try {
+                const response = await fetch('/calculate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ radius: radius })
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    document.getElementById('result').innerHTML = `
+                        Radius: ${result.radius}<br>
+                        Area: ${result.area}<br>
+                        Circumference: ${result.circumference}
+                    `;
+                } else {
+                    document.getElementById('result').innerHTML = `Error: ${result.error}`;
+                }
+            } catch (error) {
+                document.getElementById('result').innerHTML = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Circle Calculator</h2>
+    <form onsubmit="event.preventDefault(); calculateCircle();">
+        <label for="radius">Radius:</label>
+        <input type="number" id="radius" name="radius" step="any" required><br><br>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>

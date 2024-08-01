@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./j_query.js"></script>
+    <script>
+        $(document).ready(function(){
+            const Order=function(id,name,bDat,sDat,Amount){
+                this.id=id,
+                this.name=name,
+                this.bDat=bDat,
+                this.sDat=sDat,
+                this.Amount=Amount
+            }
+           
+            $('#btn').click(function(){
+                var oId=$('#id').val();
+               var name=$('#cname').val();
+               if(name<6){
+                $('#i1').html("Name less than 6 character")
+               }
+               else{
+                $('#i1').html("")
+               }
+
+               var bDate=$('#bDate').val();
+               var sDate=$('#sDate').val();
+               var amo=$('#amo').val();
+
+               
+
+               bDate=new Date(bDate)
+               sDate=new Date(sDate)
+
+               var o1=new Order(oId,name,bDate,sDate,amo)
+               
+               document.getElementById("res").innerHTML=`Id : ${o1.id} <br> Customer Name : ${o1.name} <br> Billing Date : ${o1.bDate} <br> Shipping date : ${o1.sDate} <br> Amount : ${o1.Amount}` 
+               
+               
+               if(bDate.getTime()>sDate.getTime())
+                  $('#i2').html("Billing date cannnot be greater than date")
+                else
+                  $('#i2').html("")
+
+                
+            })
+        })
+    </script>
+</head>
+<body style="background-color: rgb(48, 233, 171);text-shadow: 2px 2px 4px black;">
+    <fieldset style="border-color: blue;">
+        <form>
+            Order Id : <input id="id"/><br><br>
+            Customer name : <input id="cname"/><span id="i1"></span><br><br>
+            Enter Billing date : <input type="date" id="bDate"/><span id="i2"></span><br><br>
+            Enter Shipping date : <input type="date"  id="sDate"/><br><br>
+            Order Total : <input id="amo"/><br><br>
+            
+
+            <button type="button" id="btn" style="color:aliceblue;background-color :blue;">Submit</button>
+
+            
+        </form>
+    </fieldset>
+<div style="display:flex;justify-content: center;">
+    <Fieldset style="background-color: rgb(245, 245, 131);"><legend>Bill</legend>  <div id="res"></div></Fieldset>
+</div>
+</body>
+</html>

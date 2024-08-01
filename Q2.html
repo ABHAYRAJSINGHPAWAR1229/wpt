@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        background-color: bisque;
+        color:brown;
+        text-shadow: 3px 3px 4px orangered;
+    }
+    #result{
+        text-size-adjust: 30px 30px;
+        display:flex;
+        justify-content: center;
+        color:blue
+    }
+</style>
+</head>
+<body>
+    <label for="val"> Integer value:</label>
+        <input type="text" id="val" name="val" placeholder="Enter the Integer"><br><br>
+    
+    <label for="num">Times:</label>
+       <input type="number" id="num" ><br>
+
+      <div style="display: flex;justify-content: center;">
+         <button id="btn" value="btn"  style="width: 30%;background-color: blue;color:whitesmoke ;" onclick="solving()">Submit</button>  
+      </div>
+        
+
+   <div id="result"></div>
+      <script>
+        const solving=()=>{
+            var a=parseInt(document.getElementById("val").value);
+            var b=parseInt(document.getElementById("num").value);
+            
+            var res;
+            document.getElementById("result").innerHTML=" ";
+
+            for (let i = 0; i < b; i++) {
+                document.getElementById("result").innerHTML+=" " +a;
+                
+            }
+
+
+        }
+      </script>
+   
+</body>
+</html>

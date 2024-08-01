@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power</title>
+    <script src="./j_query.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                 var num=parseInt($('#num').val());
+
+                 var powe=parseInt($('#powe').val());
+
+                 var result=num**powe;
+
+                alert(num);
+                alert(powe);
+                alert(result);
+                
+                $('#res').val(result);
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <label for="num">Number</label><input type="text" id="num" name="name" placeholder="type any number"/><br>
+    <br>
+
+    <label for="powe">Power</label><input type="text" id='powe' name="powe" placeholder="type indices"/>
+    
+    <h3><button type="button" id="btn" >create result</button> </h3> 
+    <label for="res">Result</label><input type="text" id="res" disabled/>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="./j_query.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#compute').click(function(){
+                var p=parseInt($('#amount').val());
+                var r=$('#rate').val();
+                var t=$('#time').val();
+
+                var int=parseInt(Math.round((p*(1+0.01*r)**t)-p));
+                var amt=int+p;
+                var month=Math.round(amt/12);
+
+                $("#pay").val(month);
+                $('#total').val(amt);
+                $('#totalInt').val(int);
+            })
+         })
+    </script>
+</head>
+<body>
+    <fieldset><legend>Payment Calculator</legend>
+    <h1>Enter Loan Information :</h1>
+    <label>1)Amount of the loan (any currency) : </label><input type="number" id="amount"/><br><br>
+
+    <label>2)Anual percentage rate of Interest(per Annum) : </label><input type="number" id="rate"/><br><br>
+
+    <label>3)Repayment periods in year(per Annum) : </label><input type="number" id="time"/><br><br>
+
+    <button btn="button" id="compute">Compute</button>
+    <!-- -------------------------------------------------------- -->
+    <h2>Payment Information : </h2>
+
+    <!-- ---------------------------------------------------------- -->
+  
+    <label>4)Your montlly payment will be : </label><input type="number" id="pay"/><br><br>
+    
+    <label>5)Your Payment will be : </label><input type="number" id="total"/><br><br>
+
+    <label>6)Your total interest payments will be : </label><input type="number" id="totalInt"/><br><br>
+    
+    </fieldset>
+</body>
+</html>

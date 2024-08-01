@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            background-color: rgb(59, 38, 123);
+            color: aliceblue;
+        }
+        body{
+            background-color: rgb(241, 229, 119);
+            color: brown;
+            text-shadow: 2px 2px 3px blue;
+        }
+    </style>
+</head>
+<body>
+    <table width=100%>
+        <tr>
+            <td>
+                <label>Number 1 : </label>
+            </td>
+            <td>
+                <input type="text" id="num1">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Number 2 : </label>
+            </td>
+            <td>
+                <input type="text" id="num2">
+            </td>
+        </tr>
+        <tr>
+            
+            <td colspan="2">
+                <div>
+                <button type="button" onclick="add()">Addition</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            
+            <td colspan="2">
+                <div>
+                <button type="button" onclick="sub()">Subtraction</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            
+            <td colspan="2">
+                <div>
+                <button type="button" onclick="mult()">Multiplication</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            
+            <td colspan="2">
+                <div >
+                <button type="button" onclick="div()">Division</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td id="result">
+                Result is here:
+            </td>
+            </tr>
+    </table>
+
+    <script>
+        const add=()=>{
+
+            let a=parseInt(document.getElementById("num1").value);
+            let b=parseInt(document.getElementById("num2").value);
+   
+            document.getElementById("result").innerHTML="Result = " +(a+b);
+        }
+
+        const sub=()=>{
+
+            let a=parseInt(document.getElementById("num1").value);
+            let b=parseInt(document.getElementById("num2").value);
+   
+            document.getElementById("result").innerHTML="Result = " +(a-b);
+        }
+
+        const mult=()=>{
+
+            let a=parseInt(document.getElementById("num1").value);
+            let b=parseInt(document.getElementById("num2").value);
+   
+            document.getElementById("result").innerHTML="Result = " +a*b;
+        }
+        const div=()=>{
+            let a=parseInt(document.getElementById("num1").value);
+            let b=parseInt(document.getElementById("num2").value);
+   
+            document.getElementById("result").innerHTML="Result = " +a/b;
+        }
+    </script>
+
+</body>
+</html>

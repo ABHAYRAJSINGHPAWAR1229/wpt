@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./j_query.js"></script>
+    <script >
+       $(document).ready(function(){
+        $('#btn').click(function(){
+            var name=$('#uname').val();
+            var pass=$('#pass').val();
+
+            if(name.length<6)
+               $('#i1').html("Customer name is less than 6 character")
+            else
+              $('#i1').html("");
+
+              if(pass.length>=8 && pass.includes('#'))
+                $('#i2').html("")
+              else
+              $('#i2').html("password must contain 8 character with #")
+        })
+       })
+    </script>
+</head>
+<body>
+    <form >
+        User Name : <input id="uname" maxlength="10" required><span id="i1"></span><br><br>
+        Password : <input id="pass" required><span id="i2"></span><br><br>
+        <button type="button" id="btn" >Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(195, 245, 145);
+            color: rgb(12, 55, 12);
+            text-shadow: 4px 4px 3px black;
+        }
+        fieldset{
+            border-color: rgb(27, 192, 71);
+            border-radius:5px;
+        }
+        legend{
+            background-color: rgb(11, 109, 57);
+            color:aliceblue;
+            border-radius:5px;
+        }
+        button{
+            background-color: rgb(11, 103, 11);
+            color:white;
+            width: 20%
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        const createAdd=()=>{
+            var num=parseInt(document.getElementById("num").value);
+            
+            var cpy=num;
+            var res=0;
+            if(parseInt(cpy/10000)>0 && parseInt(cpy/10000)<=9 ){
+            for(var i=1;i<=5;i++){
+                 res+=parseInt(cpy%10);
+                cpy=parseInt(cpy/10);
+            }
+            document.getElementById("res").innerHTML=`Result : ${res}`;
+        }
+        else
+        alert("Enter five digit number");
+        }
+    </script>
+</head>
+<body>
+    <label for="num">Enter 5 digit number:</label>
+    <input type="text" id="num"  maxlength="5">
+
+    <br><br>
+
+<div>
+    <button id="btn" name="btn" onclick="createAdd()">Sum</button>
+</div>
+    <br>
+    <br>
+    <fieldset>
+        <legend>Result</legend>
+        <div id="res">Your result is:</div>
+    </fieldset>
+</body>
+</html>

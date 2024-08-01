@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greeting</title>
+    <style>
+        body{
+            background-color: rgb(232, 214, 205);
+        }
+        fieldset{
+            border-radius: 40px;
+            border-color: rgb(80, 6, 5);
+        }
+        legend{
+            color:rgb(252, 248, 248);
+            background-color:rgb(91, 10, 4);
+            border-radius: 10px;
+        }
+        div{
+            color:rgb(183, 7, 7);
+            text-shadow: 5px 4px 24px rgb(143, 6, 6);
+        }
+    </style>
+    <script src="./j_query.js"></script>
+    <script >
+      
+            
+
+           
+
+            $(document).ready(function(){
+
+                let date=new Date();
+                var day=date.getDate(); 
+                var month=date.getMonth() +1;
+             
+                var year=date.getFullYear();
+                
+               
+                
+
+           
+                
+
+                // -----------------------------------------------------------------------------------------
+                var d1 = new Date("2024-12-31");   
+                var d2 = new Date(`${year}/${month}/${day}`);   
+                var diff = ((d1.getTime() - d2.getTime())/(60*60*24*1000)).toFixed(0);  
+               
+
+                //----------------------------------------------------------------------------------------
+
+                //var response=`Today is ${currentDate} ,Welcome,and Good Afternoon to You.Number of days left till end of year : ${diff} days`;
+                setInterval(function(){
+                    const currentDate = new Date().toUTCString(); 
+                 //  var response=`Today is ${currentDate} ,Welcome,and Good Afternoon to You.Number of days left till end of year : ${diff} days`;
+                     var response=`Today is ${day}-${month}-${year} .Number of days left end of year : ${diff} days`;
+                    $('#result').html(response);
+                },1000);
+                
+            })
+           
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Welcome greeting</legend>
+
+       <h2> <div id="result"></div> </h2>
+    </fieldset>
+</body>
+</html>

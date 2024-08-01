@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./j_query.js"></script>
+    <script>
+       $(document).ready(function(){
+        $("#btn").click(function(){
+            var str=$('#str').val();
+            var subStr=$('#str1').val();
+            var repStr=$('#str2').val();
+           
+            var res=$(`input[type="radio"]:checked`).val()
+            var temp;
+
+            switch (res) {
+                case 'search':
+                temp=str.search(subStr);
+                   $("#res").html(temp);    
+                    break;
+
+            case 'upper':
+                    temp=str.toUpperCase()
+                    $("#res").html(temp);
+                    break;
+
+            case 'lower':
+                    temp=str.toLowerCase()
+                    $("#res").html(temp);
+                    break;
+
+            case 'trim':
+                    temp=str.trim()
+                    $("#res").html(temp);    
+                    break;        
+
+
+            case 'concate':
+                   temp=str.concat(subStr);
+                   $("#res").html(temp); 
+                    break; 
+                    
+            case 'replace':
+                   temp=str.replace(subStr,repStr);
+                   $("#res").html(temp);    
+                    break; 
+            }
+        })
+       })
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <label for="str">Enter String : </label><input id="str"/><br><br>
+
+        <label for="str1">Enter Sub String : </label><input id="str1"/><br><br>
+
+        <label for="str2">Replace with String : </label><input id="str2"/><br><br>
+
+        <!-- -------------------------------------------- -->
+
+
+        <input type="radio" id="r1" name="rad" value="search"/><span></span>Search substring in main String</span>
+
+        <input type="radio" id="r2" name="rad" value="upper"><span></span>To Upper case</span>
+
+        <input type="radio" id="r3" name="rad" value="lower" /><span></span>To Lower case</span>
+
+        <input type="radio" id="r4" name="rad" value="trim" /><span></span>Trim Spaces</span>
+
+        <input type="radio" id="r5" name="rad" value="concate" /><span></span>Concatenate</span>
+
+        <input type="radio" id="r6" name="rad" value="replace" /><span></span>Repalce</span><br><br>
+
+        <button type="button" id="btn">Submit Query</button>
+
+        <div id="res"></div>
+
+    </fieldset>
+</body>
+</html>

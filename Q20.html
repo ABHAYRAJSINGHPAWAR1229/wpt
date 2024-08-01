@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./j_query.js"></script>
+    <script>
+        $(document).ready(function(){
+           
+             var arr=['JOHN','STEVE','BEN','DAMON','IAN']
+            $("#btn1").click(function() {
+                
+                 var ne=$("#name").val();
+                 ne=ne.toUpperCase();
+                 arr.push(ne);
+                 $('#name').val("");
+            } )
+
+            $("#btn2").click(function(){
+               
+                $("#res").html("")
+                str="<ul>"
+                    for(var one of arr)
+                       str+=`<li>${one}</li><br>`;
+
+                str+="</ul>"  
+                $("#res").html(str)     
+            })
+        })
+    </script>
+</head>
+<body>
+    <form>
+        Name: <input id="name" placeholder="Enter your name"><br><br>
+        <button type="button" id="btn1">Add Name</button><br><br>
+        <button type="button" id="btn2">Display Name</button><br><br>
+        <div id="res"></div>
+
+    </form>
+</body>
+</html>

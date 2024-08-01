@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(206, 245, 232);
+            color: darkslategrey;
+            text-shadow: 2px 3px 4px blue;
+        }
+    </style>
+</head>
+<body >
+    <form >
+    <label>First number:</label> <input type="text" id="f1" class="num" name="num" /><br><br>
+    <label>Second number:</label> <input type="text" id="f2" class="num" name="num" /><br><br>
+    <label>Third number:</label> <input type="text" id="f3" class="num" name="num" /><br><br>
+
+    <button type="button" id="btn" value="btn1" onclick="checkseMax()" style="background-color: rgb(42, 208, 56);">Submit</button>
+</form>
+<div id="myDiv"> result is here : </div>
+    <script>
+        function checkseMax(){
+           var a=parseInt(document.getElementById("f1").value);
+           var b=parseInt(document.getElementById("f2").value);
+           var c=parseInt(document.getElementById("f3").value); 
+           var res;
+           if(a-b>0 && a-c>0)
+              res=a;
+            else if(b-c>0 && b-a>0)
+              res=b;
+            else
+              res=c;
+
+              document.getElementById("myDiv").innerHTML=`Result : ${res}`
+        }
+        
+    </script>
+</body>
+</html>

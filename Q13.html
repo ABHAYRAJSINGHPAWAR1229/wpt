@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./j_query.js"></script>
+    <script>
+         $(document).ready(function(){
+            const Employee=function(Eid,Ename,ESalary){
+                this.Eid=Eid,
+                this.Ename=Ename,
+                this.ESalary=ESalary
+            }
+
+            var arr=[[1,"Abhay",75000],[2,"rajat",97000],[3,"Abhimanyu",120000]]
+
+            $('#btn').click(function(){
+               
+                var str="<table border='2'><tr><th>Employee Id</th><th>Employee Name</th><th>Employee Salary</th></tr>"
+
+                 for(var ele of arr){
+                    
+                    str+=`<tr><td>${ele[0]}</td><td>${ele[1]}</td><td>${ele[2]}</td></tr>`
+                 }
+                 str+="</table"
+
+                 $("#res").html(str)
+            })
+
+            var s
+            $('#btnC').click(function(){
+                 var Id=$('#id').val()
+                 alert(Id)
+                 s.push(Id)
+                 var name=$('#name').val()
+                 alert(name)
+                 s.push(name)
+                 var sal=$('#sal').val()
+                 alert(sal)
+                 s.push(sal)
+                 
+                alert(s)
+
+                
+            })
+
+         })
+    </script>
+</head>
+<body>
+    <form>
+        <h2> Create Employee</h2><br><br>
+        Employee id : <input id="id"/><br><br>
+        Employee id : <input id="name"/><br><br>
+        Employee Salary : <input type="number" id="sal"/><br><br>
+        <Button type="button" id="btnC">Create Employee</Button>
+        <h3>To see Employee Table click on button</h3>
+        
+        <Button type="button" id="btn">Display Employee</Button>
+        <div id="res"></div>
+</form>
+</body>
+</html>
